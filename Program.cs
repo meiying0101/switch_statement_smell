@@ -13,6 +13,8 @@ namespace ConsoleApplication1
         }
         virtual public string AnimalType { get; private set; }
         public string Name { get; private set; }
+        virtual public string talk { get;private set; }
+
     }
 
     class Dog : Animal {
@@ -27,6 +29,15 @@ namespace ConsoleApplication1
                 return "dog";
             }
         }
+        public override string talk
+        {
+            get
+            {
+                return "汪汪";
+            }
+        }
+
+
     }
 
     class Cat : Animal
@@ -40,6 +51,13 @@ namespace ConsoleApplication1
             get
             {
                 return "cat";
+            }
+        }
+        public override string talk
+        {
+            get
+            {
+                return "喵喵";
             }
         }
     }
@@ -57,13 +75,7 @@ namespace ConsoleApplication1
 
             foreach (var animal in animals)
             {
-                if (animal.AnimalType == "dog")
-                {
-                    Console.WriteLine(animal.Name + "汪汪");
-                } else if (animal.AnimalType == "cat")
-                {
-                    Console.WriteLine(animal.Name + "喵喵");
-                }
+                   Console.WriteLine(animal.Name+animal.talk);  
             }
         }
     }
